@@ -16,6 +16,16 @@ router.get('/toprated', async (req, res) => {
     }
 });
 
+router.get('/ontheair', async (req, res) => {
+    try {
+        res.json(await tvshowsController.onTheAir())
+    }catch (err) {
+        return res.status(500).json({
+            message: err.message
+        });
+    }
+});
+
 router.get('/search/:name', async (req,res) => {
     try {
         let name= req.params.name;

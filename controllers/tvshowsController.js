@@ -9,6 +9,13 @@ class TvShows {
 
     }
 
+    async onTheAir(){
+
+        let res = await axios.get('https://api.themoviedb.org/3/tv/on_the_air?api_key=210d6a5dd3f16419ce349c9f1b200d6d&language=en-US&page=1');
+        return res.data;
+
+    }
+
     async searchByTitle (name){
 
         let res = await axios.get(`https://api.themoviedb.org/3/search/tv?api_key=210d6a5dd3f16419ce349c9f1b200d6d&query=${name}`)
