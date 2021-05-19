@@ -25,15 +25,15 @@ router.get('/:id', async (req,res) => {
     }
 });
 
-// router.get('/:titulo', async (req,res) => {
-//     try {
-//         let titulo = req.params.titulo;
-//         res.json(await moviesController.findMoviesByTitle(titulo));
-//     }catch (err) {
-//         return res.status(500).json({
-//             message:err.message
-//         });
-//     }
-// });
+router.get('/search/:titulo', async (req,res) => {
+    try {
+        let titulo = req.params.titulo;
+        res.json(await moviesController.findMoviesByTitle(titulo));
+    }catch (err) {
+        return res.status(500).json({
+            message:err.message
+        });
+    }
+});
 
 module.exports = router;
