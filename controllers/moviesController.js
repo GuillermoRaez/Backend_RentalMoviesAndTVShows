@@ -17,10 +17,21 @@ class Movies {
         return res.data;
     }
 
-    // async findMoviesGenreByName(genreArray) {
-    //     let res = await axios.get(`https://api.themoviedb.org/3/${genreArray}/movie/list?api_key=210d6a5dd3f16419ce349c9f1b200d6d&language=en-US`);
-    //     return res.data;
-    // }
+    async findMoviesGenreByName(name) {
+
+        let genreArray = await axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=210d6a5dd3f16419ce349c9f1b200d6d&language=en-US');
+
+        for (let i = 0 ; i < genreArray.lenght ; i++) {
+
+            if ( genreArray[i].name == name){
+
+                id = genreArray[i].id
+            }
+        }
+
+         let res = await axios.get(`https://api.themoviedb.org/3/${id}/movie/list?api_key=210d6a5dd3f16419ce349c9f1b200d6d&language=en-US`);
+         return res.data;
+     }
 
 }
 

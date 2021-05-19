@@ -36,16 +36,16 @@ router.get('/search/:title', async (req,res) => {
     }
 });
 
-// router.get('/:name', async (req,res) => {
-//     try {
-//         let name = req.params.name
-//         let genreArray = genreArray.map(name);
-//         res.json(await moviesController.findMoviesGenrebyName(genreArray));
-//         }catch (err) {
-//         return res.status(500).json({
-//             message:err.message
-//         });
-//     }
-// });
+router.get('/genre/:name', async (req,res) => {
+    try {
+        let name = req.params.name
+        res.json(await moviesController.findMoviesGenrebyName(name));
+        }catch (err) {
+        return res.status(500).json({
+            message:err.message
+        });
+    }
+});
+
 
 module.exports = router;
