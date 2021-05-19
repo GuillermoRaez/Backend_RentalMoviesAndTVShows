@@ -26,10 +26,21 @@ router.get('/ontheair', async (req, res) => {
     }
 });
 
-router.get('/search/:name', async (req,res) => {
+router.get('/search/:title', async (req,res) => {
     try {
-        let name= req.params.name;
-        res.json(await tvshowsController.searchByTitle(name));
+        let title= req.params.title;
+        res.json(await tvshowsController.searchByTitle(title));
+    }catch (err) {
+        return res.status(500).json({
+            message: err.message
+        });
+    }
+});
+
+router.get('/theatre_or_cinema/:id', async (req,res) => {
+    try {
+        let id= req.params.id;
+        res.json(await tvshowsController.theatersOrCinema(id));
     }catch (err) {
         return res.status(500).json({
             message: err.message
