@@ -6,11 +6,11 @@ Prueba técnica del Bootcamp FullStack Developer con <a href="https://geekshubsa
 
 Primer paso instalar las dependencias del proyecto.
 
-####`npm i`
+#### `npm i`
 
 A continuación levantar el servidor. 
 
-####`npm start`
+#### `npm start`
 
 Finalmente en Postman enviar petición de los endpoints.
 
