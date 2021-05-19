@@ -16,12 +16,13 @@ Para levantar el servidor :
 
 <img src="img/javascript.png" width="53"> <img src="img/node.png" width="65"> <img src="img/postman.png" width="50">
 
-Dependencias : Express y Axios.
+Dependencias instaladas : Express y Axios.
 
 
 ### Desarrolladores ✍️
 
 [Guillermo Raez](https://github.com/GuillermoRaez)
+
 [Adriana Fayos](https://github.com/AdrianaFayos)
 
 ---
