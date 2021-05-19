@@ -48,7 +48,7 @@ router.get('/theatre_or_cinema/:id', async (req,res) => {
     }
 });
 
-router.get('/:id', async (req,res) => {
+router.get('/searchid/:id', async (req,res) => {
     try {
         let id = req.params.id;
         res.json(await tvshowsController.searchById(id));
