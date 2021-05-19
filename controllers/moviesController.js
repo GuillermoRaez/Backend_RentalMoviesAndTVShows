@@ -17,20 +17,18 @@ class Movies {
         return res.data;
     }
 
-    async findMoviesGenreByName(name) {
-
+    async Genre(name) {
         let genreArray = await axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=210d6a5dd3f16419ce349c9f1b200d6d&language=en-US');
-
-        for (let i = 0 ; i < genreArray.lenght ; i++) {
-
-            if ( genreArray[i].name == name){
-
-                id = genreArray[i].id
+        console.log(genreArray.data);
+        let newArray = genreArray.data.genres;
+        for (let i = 0 ; i < newArray.length ; i++) {
+            console.log(newArray.length + "Este es dentro de for");
+            if (newArray[i].name == name){
+                let id = newArray[i].id;
+                let res = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=210d6a5dd3f16419ce349c9f1b200d6d&with_genres=${id}`);
+            return res.data;
             }
-        }
-
-         let res = await axios.get(`https://api.themoviedb.org/3/${id}/movie/list?api_key=210d6a5dd3f16419ce349c9f1b200d6d&language=en-US`);
-         return res.data;
+        }         
      }
 
 }
