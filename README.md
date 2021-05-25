@@ -6,11 +6,15 @@ Prueba técnica del Bootcamp FullStack Developer con <a href="https://geekshubsa
 
 Primer paso instalar las dependencias del proyecto.
 
-#### `npm i`
+### `npm i`
+
+Segundo paso inicializar la dependencia Sequelize.
+
+### `sequelize init`
 
 A continuación levantar el servidor. 
 
-#### `npm start`
+### `npm start`
 
 Finalmente en Postman enviar petición de los endpoints.
 
@@ -31,12 +35,20 @@ Finalmente en Postman enviar petición de los endpoints.
    - GET /tvshows/search/:title --> Muestra series por título.
    - GET /tvshows/ontheair --> Muestra series que vayan a tener un capítulo emitido en los próximos 7 dias.
    - GET /tvshows/theatre_or_cinema/:id --> Muestra series que vayan a tener un pase en teatros o cines.
+<br>
+
+- Usuarios
+   - GET /users --> Muestra los usuarios registrados.
+   - POST /users --> Da de alta un nuevo usuario.
+   - PUT /users --> Modifica los atributos de un usuario.
+   - DELETE /users/:id --> Elimina el usuario introducido mediante id.
+
 
 ### Tecnologías utilizadas 
 
-<img src="img/javascript.png" width="53"> <img src="img/node.png" width="65"> <img src="img/postman.png" width="50">
+<img src="img/javascript.png" width="53"> <img src="img/node.png" width="65"> <img src="img/postman.png" width="50"> <img src="img/sequelize.png" width="50">
 
-Dependencias instaladas : Express y Axios.
+Dependencias instaladas : Express, Axios, MySQL2, Sequelize y Sequelize-cli.
 
 
 ### Desarrolladores ✍️
