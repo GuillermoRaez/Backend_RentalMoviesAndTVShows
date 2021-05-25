@@ -20,14 +20,11 @@ class Client {
         )
     }
 
-
     async deleteUser(id){
 
         return User.destroy({where: {id:id}});
     }
 }
-
-
 
 let userController = new Client();
 module.exports = userController; 
