@@ -1,6 +1,6 @@
 # Backend Rental Movies And TV Shows
 
-Prueba técnica del Bootcamp FullStack Developer con <a href="https://geekshubsacademy.com/">GeeksHubs Academy</a> en el que nos piden crear la parte backend para una aplicación de alquiler de películas con el método CRUD.
+Reto del Bootcamp FullStack Developer con <a href="https://geekshubsacademy.com/">GeeksHubs Academy</a> en el que nos piden crear la parte backend para una aplicación de alquiler de películas con el método CRUD.
 
 ### Instrucciones 🔧
 
@@ -39,7 +39,7 @@ Finalmente en Postman enviar petición de los endpoints.
    - GET /tvshows/theatre_or_cinema/:id --> Muestra series que vayan a tener un pase en teatros o cines.
 <br>
 
-- Usuarios
+- Login de usuario
    - POST /login --> Logea a un usuario registrado y devuelve un token.
 <br>
 
@@ -48,6 +48,11 @@ Finalmente en Postman enviar petición de los endpoints.
    - POST /users --> Da de alta un nuevo usuario y encripta su contraseña.
    - PUT /users --> Modifica los atributos de un usuario.
    - DELETE /users/:id --> Elimina el usuario introducido mediante id. 
+<br>
+
+- Pedido
+   - GET /orders --> Muestra todos los pedidos.
+   - POST /orders --> Crea un nuevo pedido.
 
 
 ### Tecnologías utilizadas 
