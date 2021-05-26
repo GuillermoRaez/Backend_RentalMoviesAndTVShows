@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const userController = require('../controllers/userController');
+const authenticate = require('../middleware/authenticate');
 
 // Endpoint de Perfil (R) -> GET
 router.get('/', async(req, res) => {
@@ -26,7 +27,7 @@ router.post('/', async(req, res) => {
 })
 
 // Endpoint de Modificación de datos (U) -> UPDATE
-router.put('/', async (req,res) => {
+router.put('/', authenticate, async (req,res) => {
     try{
         const bodyData = req.body;
         res.json(await userController.modifyUser(bodyData)); 
@@ -38,7 +39,7 @@ router.put('/', async (req,res) => {
 })
 
 // Endpoint de Baja de Usuario (D) -> Delete
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', authenticate, async (req, res) => {
     try {
         const id = req.params.id;
         res.json(await userController.deleteUser(id))

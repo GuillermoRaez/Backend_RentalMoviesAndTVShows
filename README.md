@@ -27,6 +27,8 @@ Finalmente en Postman enviar petición de los endpoints.
    - GET /movies/searchid/:id --> Muestra películas según su id.
    - GET /movies/search/:title --> Muestra películas por título.
    - GET /movies/genre/:name --> Muestra películas con determinado género.
+   - GET /movies/actors/:name --> Muestra películas por actores.
+
 <br>
 
 - Series
@@ -38,17 +40,21 @@ Finalmente en Postman enviar petición de los endpoints.
 <br>
 
 - Usuarios
+   - POST /login --> Logea a un usuario registrado y devuelve un token.
+<br>
+
+- Usuarios
    - GET /users --> Muestra los usuarios registrados.
-   - POST /users --> Da de alta un nuevo usuario.
+   - POST /users --> Da de alta un nuevo usuario y encripta su contraseña.
    - PUT /users --> Modifica los atributos de un usuario.
-   - DELETE /users/:id --> Elimina el usuario introducido mediante id.
+   - DELETE /users/:id --> Elimina el usuario introducido mediante id. 
 
 
 ### Tecnologías utilizadas 
 
 <img src="img/javascript.png" width="53"> <img src="img/node.png" width="65"> <img src="img/postman.png" width="50"> <img src="img/sequelize.png" width="50">
 
-Dependencias instaladas : Express, Axios, MySQL2, Sequelize y Sequelize-cli.
+Dependencias instaladas : Express, Axios, MySQL2, Sequelize, Sequelize-cli, Bcrypt y Jsonwebtoken.
 
 
 ### Desarrolladores ✍️
