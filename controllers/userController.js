@@ -1,4 +1,5 @@
 const { User } = require("../models");
+const bcrypt = require('bcrypt');
 
 class Client {
 
@@ -6,9 +7,20 @@ class Client {
         return User.findAll();
     }
 
-    async signUpUser(client){
-        
-        return User.create(client);
+    async signUpUser(body){
+    
+        // El siguiente código encripta la contraseña
+        let password = body.password;
+        let passwordHashed = bcrypt.hashSync(password, 10);
+        body.password = passwordHashed;
+        return User.create(body);
+    }
+
+    async userEmail(email){
+
+        return User.findOne({
+            where: {email}
+        });
     }
 
     async modifyUser(bodyData){
