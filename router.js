@@ -1,13 +1,14 @@
 const router = require('express').Router();
 
-//Verificar siempre que esta en comentario cuando el proyecto no esta completo.
 const moviesRouter = require('./routes/moviesRouter');
 const tvshowsRouter = require('./routes/tvshowsRouter');
 const userRouter = require('./routes/userRouter');
+const loginRouter = require('./routes/loginRouter')
 
 router.use('/users', userRouter);
 router.use('/movies', moviesRouter);
 router.use('/tvshows', tvshowsRouter);
+router.use('/login', loginRouter);
 
 module.exports = router;
 
