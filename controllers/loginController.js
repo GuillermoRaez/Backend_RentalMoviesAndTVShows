@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const userController = require('./userController');
-const secret = "Guillermo & Adrina Rental Movies";
+const secret = "Guillermo & Adriana Rental Movies";
 
 class LoginController {
 
@@ -18,6 +18,7 @@ class LoginController {
         let payload = {
             userId : user.id,
             createdAt : new Date,
+            isAdmin : user.isAdmin
         };
 
         return jwt.sign(payload,secret)
