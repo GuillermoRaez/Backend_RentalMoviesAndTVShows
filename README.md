@@ -1,18 +1,34 @@
-# Backend Rental Movies And TV Shows
+<h1 align="center">
+  <br>🎥 Backend Buscador Películas 🎥
+</h1>
 
 Reto del Bootcamp FullStack Developer con <a href="https://geekshubsacademy.com/">GeeksHubs Academy</a> en el que nos piden crear la parte backend para una aplicación de alquiler de películas con el método CRUD.
 
-### Instrucciones 🔧
+El siguiente proyecto está realizado por [Guillermo Raez](https://github.com/GuillermoRaez) y [Adriana Fayos](https://github.com/AdrianaFayos). 
 
-Primer paso instalar las dependencias del proyecto.
+Fecha de inicio 19 de Mayo. <br>
+Fecha máxima de entrega 30 de Mayo.
+
+Hemos utilizado la herramienta trello para organizar y distribuir las tareas.
+
+<img src="img/trello.png" width="1500">
+
+
+## Instrucciones 🔧
+
+Para empezar clonar el repositorio e instalar las dependencias del proyecto.
 
 ### `npm i`
 
-Segundo paso inicializar la dependencia Sequelize.
+Inicializar la dependencia Sequelize e introducir los campos de contraseña y base de datos en el archivo config.json.
 
 ### `sequelize init`
 
-A continuación levantar el servidor. 
+Migrar los modelos a la base de datos local.
+
+### `sequelize db:migrate`
+
+Levantar el servidor. 
 
 ### `npm start`
 
@@ -20,7 +36,7 @@ Finalmente en Postman enviar petición de los endpoints.
 
 <img src="img/runpostman.png" width="150"> 
 
-### Endpoints
+## Endpoints
 
 - Películas 
    - GET /movies/toprated --> Muestra películas top rated.
@@ -46,23 +62,32 @@ Finalmente en Postman enviar petición de los endpoints.
 - Usuarios
    - GET /users --> Muestra los usuarios registrados.
    - POST /users --> Da de alta un nuevo usuario y encripta su contraseña.
-   - PUT /users --> Modifica los atributos de un usuario.
-   - DELETE /users/:id --> Elimina el usuario introducido mediante id. 
+   - PUT /users --> Modifica los atributos de un usuario (token login necesario).
+   - DELETE /users/:id --> Elimina el usuario introducido mediante id (token login necesario). 
 <br>
 
-- Pedido
-   - GET /orders --> Muestra todos los pedidos.
-   - POST /orders --> Crea un nuevo pedido.
+- Pedidos
+   - GET /orders/:id --> Muestra todos los pedidos según el id de usuario (token login necesario).
+   - POST /orders --> Crea un nuevo pedido (token login necesario).
+   - PUT /orders --> Modifica los atributos de un pedido (token login necesario).
+   - DELETE /orders --> Elimina un pedido (token login necesario). 
 
+## Relación entre modelos
 
-### Tecnologías utilizadas 
+La relación entre los modelos usuario y pedidos es de 1 a muchos.
+
+<img align="center" src="img/relation.png" width="700">
+
+Un usuario puede realizar varios pedidos, pero un pedido solo puede ser ordenado por un usuario.
+
+## Tecnologías utilizadas 
 
 <img src="img/javascript.png" width="53"> <img src="img/node.png" width="65"> <img src="img/postman.png" width="50"> <img src="img/sequelize.png" width="50">
 
 Dependencias instaladas : Express, Axios, MySQL2, Sequelize, Sequelize-cli, Bcrypt y Jsonwebtoken.
 
 
-### Desarrolladores ✍️
+## Desarrolladores ✍️
 
 [Guillermo Raez](https://github.com/GuillermoRaez) 
 
