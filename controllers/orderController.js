@@ -11,14 +11,17 @@ class Orderissue {
         return Order.create(body);
     }
 
-// Needs to be finished and polished
-
-    async modifyOrder() {
-        return Order.modify();
+    async modifyOrder(bodyData) {
+        return Order.modify(
+            //Datos que cambiamos..
+            {movieId: bodyData.movieId},
+            //Donde...
+            {where: {id: bodyData.id}}
+        );
     }
 
-    async deleteOrder() {
-        return Order.destroy();
+    async deleteOrder(id) {
+        return Order.destroy({where: {id:id}});
     }
 }
 
