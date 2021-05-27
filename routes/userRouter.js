@@ -39,9 +39,9 @@ router.put('/', authenticate, async (req,res) => {
 })
 
 // Endpoint de Baja de Usuario (D) -> Delete
-router.delete('/:id', authenticate, async (req, res) => {
+router.delete('/', authenticate, async (req, res) => {
     try {
-        const id = req.params.id;
+        const id = req.body;
         res.json(await userController.deleteUser(id))
     } catch (err) {
         return res.status(500).json({
