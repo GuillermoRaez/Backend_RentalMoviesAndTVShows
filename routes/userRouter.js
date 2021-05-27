@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const userController = require('../controllers/userController');
 const authenticate = require('../middleware/authenticate');
+const admin = require('../middleware/admin')
 
 // Endpoint de Perfil (R) -> GET
-router.get('/', async(req, res) => {
+router.get('/', admin , async(req, res) => {
     try {
         res.json(await userController.findAllUsers())
     } catch (err) {
