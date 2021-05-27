@@ -63,7 +63,7 @@ Finalmente en Postman enviar petición de los endpoints.
    - GET /users --> Muestra los usuarios registrados.
    - POST /users --> Da de alta un nuevo usuario y encripta su contraseña.
    - PUT /users --> Modifica los atributos de un usuario (token login necesario).
-   - DELETE /users/:id --> Elimina el usuario introducido mediante id (token login necesario). 
+   - DELETE /users --> Elimina el usuario introducido mediante id (token login necesario). 
 <br>
 
 - Pedidos
