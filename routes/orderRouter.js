@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const orderController = require('./controllers/orderRouter');
+const orderController = require('../controllers/orderController');
 const authenticate = require('../middleware/authenticate');
 
 //CRUD
@@ -30,8 +30,8 @@ router.post('./', authenticate, async (req,res) => {
 
 router.put('./', authenticate, async (req,res) => {
     try {
-        const id = req.body;
-        res.json(await orderController.modifyOrder(id));
+        const bodyData = req.body;
+        res.json(await orderController.modifyOrder(bodyData));
     } catch (err) {
         return res.status(500).json({
         message: err.message
