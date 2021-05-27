@@ -2,14 +2,16 @@
   <br>🎥 Backend Buscador Películas 🎥
 </h1>
 
-Reto del Bootcamp FullStack Developer con <a href="https://geekshubsacademy.com/">GeeksHubs Academy</a> en el que nos piden crear la parte backend para una aplicación de alquiler de películas con el método CRUD.
+---
+
+Reto del Bootcamp FullStack Developer con <a href="https://geekshubsacademy.com/">GeeksHubs Academy</a> en el que nos piden recrear la parte backend para una aplicación de alquiler de películas.
 
 El siguiente proyecto está realizado por [Guillermo Raez](https://github.com/GuillermoRaez) y [Adriana Fayos](https://github.com/AdrianaFayos). 
 
 Fecha de inicio 19 de Mayo. <br>
 Fecha máxima de entrega 30 de Mayo.
 
-Hemos utilizado la herramienta trello para organizar y distribuir las tareas.
+Hemos utilizado la herramienta Trello para organizar y distribuir las tareas.
 
 <img src="img/trello.png" width="1500">
 
@@ -34,7 +36,7 @@ Levantar el servidor.
 
 Finalmente en Postman enviar petición de los endpoints.
 
-<img src="img/runpostman.png" width="150"> 
+<a href="https://www.postman.com/"><img src="img/runpostman.png" width="150"></a>
 
 ## Endpoints
 
@@ -76,7 +78,7 @@ Finalmente en Postman enviar petición de los endpoints.
 
 La relación entre los modelos usuario y pedidos es de 1 a muchos.
 
-<img align="center" src="img/relation.png" width="700">
+<img src="img/relation.png" width="400">
 
 Un usuario puede realizar varios pedidos, pero un pedido solo puede ser ordenado por un usuario.
 
@@ -90,7 +92,6 @@ Dependencias instaladas : Express, Axios, MySQL2, Sequelize, Sequelize-cli, Bcry
 ## Desarrolladores ✍️
 
 [Guillermo Raez](https://github.com/GuillermoRaez) 
-
 [Adriana Fayos](https://github.com/AdrianaFayos)
 
 ---
