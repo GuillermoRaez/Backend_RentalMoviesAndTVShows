@@ -42,8 +42,8 @@ router.put('/', authenticate, async (req,res) => {
 // Endpoint de Baja de Usuario (D) -> Delete
 router.delete('/', authenticate, async (req, res) => {
     try {
-        const id = req.body;
-        res.json(await userController.deleteUser(id))
+        const bodyData = req.body;
+        res.json(await userController.deleteUser(bodyData))
     } catch (err) {
         return res.status(500).json({
             message: err.message

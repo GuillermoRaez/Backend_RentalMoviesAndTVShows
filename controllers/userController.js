@@ -32,9 +32,8 @@ class Client {
         )
     }
 
-    async deleteUser(id){
-
-        return User.destroy({where: {id:id}});
+    async deleteUser(bodyData){
+        return User.destroy({where: {id: bodyData.id}});
     }
 }
 

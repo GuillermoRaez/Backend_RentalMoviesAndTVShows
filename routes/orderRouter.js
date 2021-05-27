@@ -1,14 +1,24 @@
 const router = require('express').Router();
 const orderController = require('../controllers/orderController');
 const authenticate = require('../middleware/authenticate');
+const admin = require('../middleware/admin')
 
 //CRUD
 
-//Still needs some work
-
-router.get('./:id', authenticate, async (req, res) => {
+// Endpoint de Perfil (R) -> GET
+router.get('/', admin,  async(req, res) => {
     try {
-        let id = req.params.id;
+        res.json(await orderController.findAllOrders())
+    } catch (err) {
+        return res.status(500).json({
+            message: err.message
+        });
+    }
+});
+
+router.get('/findbyid', authenticate, async (req, res) => {
+    try {
+        let id = req.body;
         res.json(await orderController.findOrderById(id))
     }catch (err) {
         return res.status(500).json({
@@ -17,7 +27,7 @@ router.get('./:id', authenticate, async (req, res) => {
     }
 });
 
-router.post('./', authenticate, async (req,res) => {
+router.post('/', authenticate, async (req,res) => {
     try {
         const body = req.body;
         res.json(await orderController.createOrder(body))
@@ -28,7 +38,7 @@ router.post('./', authenticate, async (req,res) => {
 });
 
 
-router.put('./', authenticate, async (req,res) => {
+router.put('/', authenticate, async (req,res) => {
     try {
         const bodyData = req.body;
         res.json(await orderController.modifyOrder(bodyData));
@@ -39,9 +49,10 @@ router.put('./', authenticate, async (req,res) => {
 }
 });
 
-router.delete('./', authenticate, async (req,res) => {
+router.delete('/', authenticate, async (req,res) => {
     try {
-        res.json(await orderController.deleteOrder())
+        const bodyData = req.body;
+        res.json(await orderController.deleteOrder(bodyData))
     }catch (err) {
         return res.status(500).json({
         message: err.message

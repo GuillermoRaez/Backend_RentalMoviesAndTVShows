@@ -1,10 +1,13 @@
 const { Order }= require("../models");
-const bcrypt = require('bcrypt');
 
 class Orderissue {
 
-    async findOrderById() {
-        return Order.findById(id);
+    async findAllOrders(){
+        return Order.findAll();
+    }
+
+    async findOrderById(id) {
+        return Order.findByPk(id);
     }
 
     async createOrder(body) {
@@ -12,7 +15,7 @@ class Orderissue {
     }
 
     async modifyOrder(bodyData) {
-        return Order.modify(
+        return Order.update(
             //Datos que cambiamos..
             {movieId: bodyData.movieId},
             //Donde...
@@ -20,8 +23,8 @@ class Orderissue {
         );
     }
 
-    async deleteOrder(id) {
-        return Order.destroy({where: {id:id}});
+    async deleteOrder(bodyData) {
+        return Order.destroy({where: {id: bodyData.id}});
     }
 }
 
