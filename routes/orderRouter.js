@@ -18,8 +18,8 @@ router.get('/', admin,  async(req, res) => {
 
 router.get('/findbyid', authenticate, async (req, res) => {
     try {
-        let id = req.body;
-        res.json(await orderController.findOrderById(id))
+        let bodyData = req.body;
+        res.json(await orderController.findOrderById(bodyData))
     }catch (err) {
         return res.status(500).json({
             message: err.message

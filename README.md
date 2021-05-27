@@ -62,14 +62,15 @@ Finalmente en Postman enviar petición de los endpoints.
 <br>
 
 - Usuarios
-   - GET /users --> Muestra los usuarios registrados.
+   - GET /users --> Muestra los usuarios registrados (token admin necesario).
    - POST /users --> Da de alta un nuevo usuario y encripta su contraseña.
    - PUT /users --> Modifica los atributos de un usuario (token login necesario).
    - DELETE /users --> Elimina el usuario introducido mediante id (token login necesario). 
 <br>
 
 - Pedidos
-   - GET /orders/:id --> Muestra todos los pedidos según el id de usuario (token login necesario).
+   - GET /orders --> Muestra todos los pedidos (token admin necesario).
+   - GET /orders/findbyid --> Muestra todos los pedidos según el id de usuario (token login necesario).
    - POST /orders --> Crea un nuevo pedido (token login necesario).
    - PUT /orders --> Modifica los atributos de un pedido (token login necesario).
    - DELETE /orders --> Elimina un pedido (token login necesario). 
@@ -78,7 +79,7 @@ Finalmente en Postman enviar petición de los endpoints.
 
 La relación entre los modelos usuario y pedidos es de 1 a muchos.
 
-<img src="img/relation.png" width="400">
+<img src="img/relation.png" width="500">
 
 Un usuario puede realizar varios pedidos, pero un pedido solo puede ser ordenado por un usuario.
 

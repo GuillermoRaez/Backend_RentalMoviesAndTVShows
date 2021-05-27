@@ -6,8 +6,10 @@ class Orderissue {
         return Order.findAll();
     }
 
-    async findOrderById(id) {
-        return Order.findByPk(id);
+    async findOrderById(bodyData) {
+        return Order.findAll(
+            {where: {userId: bodyData.userId}}
+          );
     }
 
     async createOrder(body) {
