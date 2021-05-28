@@ -38,6 +38,8 @@ Finalmente en Postman enviar petición de los endpoints.
 
 <a href="https://www.postman.com/"><img src="img/runpostman.png" width="150"></a>
 
+<img src="img/postmanScreen.png" width="1500">
+
 ## Endpoints
 
 - Películas 
@@ -74,6 +76,9 @@ Finalmente en Postman enviar petición de los endpoints.
    - POST /orders --> Crea un nuevo pedido (token login necesario).
    - PUT /orders --> Modifica los atributos de un pedido (token login necesario).
    - DELETE /orders --> Elimina un pedido (token login necesario). 
+   - PUT /orders/admin --> Permite al administrador modificar los atributos de un pedido (token admin necesario).
+   - DELETE /orders/admin --> Permite al administrador eliminar un pedido (token admin necesario). 
+
 
 ## Relación entre modelos
 
