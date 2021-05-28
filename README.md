@@ -1,40 +1,40 @@
 <h1 align="center">
-  <br>🎥 Backend Buscador Películas 🎥
+  <br>🎥 Backend Movie Finder 🎥
 </h1>
 
 ---
 
-Reto del Bootcamp FullStack Developer con <a href="https://geekshubsacademy.com/">GeeksHubs Academy</a> en el que nos piden recrear la parte backend para una aplicación de alquiler de películas.
+Challenge from the Fullstack Developer Bootcamp at <a href="https://geekshubsacademy.com/">GeeksHubs Academy</a> where we have to recreate the backend of a rental movie application.
 
-El siguiente proyecto está realizado por [Guillermo Raez](https://github.com/GuillermoRaez) y [Adriana Fayos](https://github.com/AdrianaFayos). 
+This Project has been done by [Guillermo Raez](https://github.com/GuillermoRaez) and [Adriana Fayos](https://github.com/AdrianaFayos).
 
-Fecha de inicio 19 de Mayo. <br>
-Fecha máxima de entrega 30 de Mayo.
+Starting date: May 19th 2021. <br>
+Due date: May 30th 2021.
 
-Hemos utilizado la herramienta Trello para organizar y distribuir las tareas.
+We have used the Trello tool in order to share the tasks and to have a better organization.
 
 <img src="img/trello.png" width="1500">
 
 
-## Instrucciones 🔧
+## Instructions 🔧
 
-Para empezar clonar el repositorio e instalar las dependencias del proyecto.
+The first step is to clone the repository and install the project dependencies in your local repository.
 
 ### `npm i`
 
-Inicializar la dependencia Sequelize e introducir los campos de contraseña y base de datos en el archivo config.json.
+Initializate the Sequelize dependency and fill in the password and database fields in the config.json file.
 
 ### `sequelize init`
 
-Migrar los modelos a la base de datos local.
+Migrate the models to the local database.
 
 ### `sequelize db:migrate`
 
-Levantar el servidor. 
+Run the server.
 
 ### `npm start`
 
-Finalmente en Postman enviar petición de los endpoints.
+Finally, enter the endpoints petitions in Postman and send them.
 
 <a href="https://www.postman.com/"><img src="img/runpostman.png" width="150"></a>
 
@@ -42,60 +42,60 @@ Finalmente en Postman enviar petición de los endpoints.
 
 ## Endpoints
 
-- Películas 
-   - GET /movies/toprated --> Muestra películas top rated.
-   - GET /movies/searchid/:id --> Muestra películas según su id.
-   - GET /movies/search/:title --> Muestra películas por título.
-   - GET /movies/genre/:name --> Muestra películas con determinado género.
-   - GET /movies/actors/:name --> Muestra películas por actores.
+- Movies
+   - GET /movies/toprated --> Shows the Top Rated Movies.
+   - GET /movies/searchid/:id --> Shows Movies by their id.
+   - GET /movies/search/:title --> Shows Movies by title.
+   - GET /movies/genre/:name --> Shows Movies by genre.
+   - GET /movies/actors/:name --> Shows Movies by cast members.
 
 <br>
 
-- Series
-   - GET /tvshows/toprated --> Muestra series top rated.
-   - GET /tvshows/searchid/:id --> Muestra series según su id.
-   - GET /tvshows/search/:title --> Muestra series por título.
-   - GET /tvshows/ontheair --> Muestra series que vayan a tener un capítulo emitido en los próximos 7 dias.
-   - GET /tvshows/theatre_or_cinema/:id --> Muestra series que vayan a tener un pase en teatros o cines.
+- TVShows
+   - GET /tvshows/toprated --> Shows the Top Rated TVShows.
+   - GET /tvshows/searchid/:id --> Shows TVShows by their id.
+   - GET /tvshows/search/:title --> Shows TVShows by title.
+   - GET /tvshows/ontheair --> Shows TVShows that will have a new episode broadcasted in the next 7 days.
+   - GET /tvshows/theatre_or_cinema/:id --> Shows TVShows that will come out in Theaters. 
 <br>
 
-- Login de usuario
-   - POST /login --> Logea a un usuario registrado y devuelve un token.
+- User Login
+   - POST /login --> While login a registered user a token will be returned.
 <br>
 
-- Usuarios
-   - GET /users --> Muestra los usuarios registrados (token admin necesario).
-   - POST /users --> Da de alta un nuevo usuario y encripta su contraseña.
-   - PUT /users --> Modifica los atributos de un usuario (token login necesario).
-   - DELETE /users --> Elimina el usuario introducido mediante id (token login necesario). 
+- Users
+   - GET /users --> Shows the registered users (token admin needed).
+   - POST /users --> Generates a new user and encrypts its password.
+   - PUT /users --> Modify the users attributes (token login needed).
+   - DELETE /users --> Delete the user by id (token login needed). 
 <br>
 
-- Pedidos
-   - GET /orders --> Muestra todos los pedidos (token admin necesario).
-   - GET /orders/findbyid --> Muestra todos los pedidos según el id de usuario (token login necesario).
-   - POST /orders --> Crea un nuevo pedido (token login necesario).
-   - PUT /orders --> Modifica los atributos de un pedido (token login necesario).
-   - DELETE /orders --> Elimina un pedido (token login necesario). 
-   - PUT /orders/admin --> Permite al administrador modificar los atributos de un pedido (token admin necesario).
-   - DELETE /orders/admin --> Permite al administrador eliminar un pedido (token admin necesario). 
+- Orders
+   - GET /orders -->  Shows all the orders (token admin needed).
+   - GET /orders/findbyid --> Shows all the orders by the userId (token login needed).
+   - POST /orders --> Creates a new order (token login needed).
+   - PUT /orders --> Modify the order attributes (token login needed).
+   - DELETE /orders --> Deletes an order (token login needed). 
+   - PUT /orders/admin --> Allows the admin to modify the order attributes (token admin needed).
+   - DELETE /orders/admin --> Allows the admin to delete an order (token admin needed). 
 
 
-## Relación entre modelos
+## Models relation
 
-La relación entre los modelos usuario y pedidos es de 1 a muchos.
+The relation between users and orders models is 1 to many (1:n).
 
 <img src="img/relation.png" width="500">
 
-Un usuario puede realizar varios pedidos, pero un pedido solo puede ser ordenado por un usuario.
+A user can make unlimited orders, but an order can only be made by only one user.
 
-## Tecnologías utilizadas 
+## Used technologies
 
 <img src="img/javascript.png" width="53"> <img src="img/node.png" width="65"> <img src="img/postman.png" width="50"> <img src="img/sequelize.png" width="50">
 
-Dependencias instaladas : Express, Axios, MySQL2, Sequelize, Sequelize-cli, Bcrypt y Jsonwebtoken.
+Installed dependencies: Express, Axios, MySQL2, Sequelize, Sequelize-cli, Bcrypt and Jsonwebtoken.
 
 
-## Desarrolladores ✍️
+## Developers ✍️
 
 [Guillermo Raez](https://github.com/GuillermoRaez) 
 [Adriana Fayos](https://github.com/AdrianaFayos)
