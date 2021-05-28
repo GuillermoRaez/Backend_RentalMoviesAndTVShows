@@ -84,7 +84,7 @@ Finally, enter the endpoints petitions in Postman and send them.
 
 The relation between users and orders models is 1 to many (1:n).
 
-<img src="img/relation.png" width="500">
+<img src="img/relation.png" width="1500">
 
 A user can make unlimited orders, but an order can only be made by only one user.
 
