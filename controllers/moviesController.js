@@ -39,6 +39,11 @@ class Movies {
         }         
      }
 
+    async findByActor(name) {
+        let res = await axios.get(`http://api.themoviedb.org/3/search/person?query=${name}&api_key=210d6a5dd3f16419ce349c9f1b200d6d`);
+        return res.data;
+    }
+
 }
 
 let moviesController = new Movies();

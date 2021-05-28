@@ -47,5 +47,18 @@ router.get('/genre/:name', async (req,res) => {
     }
 });
 
+router.get('/actors/:name', async (req,res) => {
+    try {
+        let name = req.params.name;
+        res.json(await moviesController.findByActor(name));
+        }catch (err) {
+        return res.status(500).json({
+            message:err.message
+        });
+    }
+});
+
+
+
 
 module.exports = router;
