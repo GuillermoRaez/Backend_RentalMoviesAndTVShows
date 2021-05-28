@@ -28,12 +28,12 @@ class Client {
             //Datos que cambiamos..
             {email: bodyData.email, adress: bodyData.adress},
             //Donde...
-            {where: {id: bodyData.id}}
+            {where: {id: bodyData.userId}}
         )
     }
 
     async deleteUser(bodyData){
-        return User.destroy({where: {id: bodyData.id}});
+        return User.destroy({where: {id: bodyData.userId}});
     }
 }
 
