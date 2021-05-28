@@ -60,4 +60,26 @@ router.delete('/', authenticate, async (req,res) => {
 }
 });
 
+router.put('/admin', admin, async (req,res) => {
+    try {
+        const bodyData = req.body;
+        res.json(await orderController.modifyOrder(bodyData));
+    } catch (err) {
+        return res.status(500).json({
+        message: err.message
+    });
+}
+});
+
+router.delete('/admin', admin, async (req,res) => {
+    try {
+        const bodyData = req.body;
+        res.json(await orderController.deleteOrder(bodyData))
+    }catch (err) {
+        return res.status(500).json({
+        message: err.message
+    });
+}
+});
+
 module.exports = router;
