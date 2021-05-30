@@ -64,16 +64,16 @@ Finally, enter the endpoints petitions in Postman and send them.
 <br>
 
 - Users
-   - GET /users --> Shows the registered users (token admin needed).
+   - POST /users --> Shows the registered users (token admin needed).
    - POST /users --> Generates a new user and encrypts its password.
    - PUT /users --> Modify the users attributes (token login needed).
    - DELETE /users --> Delete the user by id (token login needed). 
 <br>
 
 - Orders
-   - GET /orders -->  Shows all the orders (token admin needed).
-   - GET /orders/findbyid --> Shows all the orders by the userId (token login needed).
-   - POST /orders --> Creates a new order (token login needed).
+   - POST /orders -->  Shows all the orders (token admin needed).
+   - POST /orders/findbyid --> Shows all the orders by the userId (token login needed).
+   - POST /orders/create --> Creates a new order (token login needed).
    - PUT /orders --> Modify the order attributes (token login needed).
    - DELETE /orders --> Deletes an order (token login needed). 
    - PUT /orders/admin --> Allows the admin to modify the order attributes (token admin needed).
