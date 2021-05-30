@@ -4,7 +4,7 @@ const authenticate = require('../middleware/authenticate');
 const admin = require('../middleware/admin')
 
 // Endpoint de Perfil (R) -> GET
-router.get('/', admin , async(req, res) => {
+router.post('/', admin , async(req, res) => {
     try {
         res.json(await userController.findAllUsers())
     } catch (err) {

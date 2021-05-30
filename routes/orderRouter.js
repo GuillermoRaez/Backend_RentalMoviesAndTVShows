@@ -6,7 +6,7 @@ const admin = require('../middleware/admin')
 //CRUD
 
 // Endpoint de Perfil (R) -> GET
-router.get('/', admin,  async(req, res) => {
+router.post('/', admin,  async(req, res) => {
     try {
         res.json(await orderController.findAllOrders())
     } catch (err) {
@@ -16,7 +16,7 @@ router.get('/', admin,  async(req, res) => {
     }
 });
 
-router.get('/findbyid', authenticate, async (req, res) => {
+router.post('/findbyid', authenticate, async (req, res) => {
     try {
         let bodyData = req.body;
         res.json(await orderController.findOrderById(bodyData))
@@ -27,7 +27,7 @@ router.get('/findbyid', authenticate, async (req, res) => {
     }
 });
 
-router.post('/', authenticate, async (req,res) => {
+router.post('/create', authenticate, async (req,res) => {
     try {
         const body = req.body;
         res.json(await orderController.createOrder(body))

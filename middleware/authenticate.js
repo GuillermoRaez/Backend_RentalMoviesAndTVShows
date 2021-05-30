@@ -8,7 +8,7 @@ const authenticate = (req,res,next) => {
     try {
 
         if(!req.headers.authorization){
-            return "no tenías token "; 
+            return "no token"; 
         }
 
         let token = req.headers.authorization.split(' ')[1];
@@ -16,7 +16,7 @@ const authenticate = (req,res,next) => {
         let auth = jwt.verify(token,secret);
 
         if(auth.userId != req.body.userId)  {
-            throw new Error ("No tienes permiso para realizar esta acción");
+            throw new Error ("You do not have permission");
         }
 
         return next();
