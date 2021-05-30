@@ -15,7 +15,7 @@ router.post('/', admin , async(req, res) => {
 });
 
 // Endpoint de Alta de Usuario (C) -> POST
-router.post('/', async(req, res) => {
+router.post('/create', async(req, res) => {
     try {
         const id = await userController.signUpUser(req.body);
         const status = 'success';
