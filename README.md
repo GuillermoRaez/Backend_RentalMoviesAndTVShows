@@ -65,7 +65,7 @@ Finally, enter the endpoints petitions in Postman and send them.
 
 - Users
    - POST /users --> Shows the registered users (token admin needed).
-   - POST /users --> Generates a new user and encrypts its password.
+   - POST /users/create --> Generates a new user and encrypts its password.
    - PUT /users --> Modify the users attributes (token login needed).
    - DELETE /users --> Delete the user by id (token login needed). 
 <br>
